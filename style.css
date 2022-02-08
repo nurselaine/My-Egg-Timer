@@ -1,0 +1,145 @@
+body{
+    background-color: #fae5d8;
+}
+
+.body{
+    width: 70%;
+    margin: auto;
+    padding: 0;
+}
+
+.div-1{
+    text-align: center;
+    background-color: #fff9f5;
+}
+
+.title-container{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.brand{
+    font-size: 14px;
+    font-family: "Days One";
+    font-weight: bold;
+    line-height: 2.5;
+    color: #e59267;
+    margin: 0;
+}
+
+.title{
+    font-size: 36px;
+    line-height: 0.7;
+    font-family: "Days One";
+    margin: 0;
+}
+
+.info{
+    font-size: 14px;
+    line-height: 2;
+    font-family: "Days One";
+    margin: 0;
+}
+
+.egg-container{
+    width: 100%;
+}
+
+.title-img{
+    width: 150px;
+    height: 200px;
+}
+
+#button-container{
+    z-index: 0;
+    background-color: #fffbf8;
+}
+
+.start-button{
+    background-color: #e59267;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    padding: 10px 80px;
+    font-size: 24px;
+    font-family: "Dongle";
+}
+
+.div-2{
+    background-color: #fffbf8;
+    width: 100%;
+}
+
+em{
+    font-weight: bold;
+    font-style:normal;
+}
+
+.details-container{
+    padding: 0px 10px;
+}
+.details{
+    font-size: 24px;
+    font-family: "Dongle";
+    line-height: 0.8;
+    margin: 0;
+    padding: 30px 0px;
+}
+.temp-container{
+    text-align: center;
+}
+.detail-button{
+    margin: 0px 8px;
+    padding: 10px 16px;
+    background-color: transparent;
+    border: black 1px solid;
+    border-radius: 5px;
+}
+
+.size-container{
+    padding: 0px 10px;
+}
+.size{
+    font-size: 24px;
+    font-family: "Dongle";
+    line-height: 0.4;
+}
+.size-button-container{
+    text-align: center;
+}
+.size-button{
+    line-height: 0;
+    padding: 30px 30px;
+    margin: 0px 10px;
+    background-color: transparent;
+    border: black 1px solid;
+    border-radius: 5px;
+    text-weight: bold;
+}
+
+.type-container{
+    padding: 0px 10px;
+}
+.type{
+    font-size: 24px;
+    font-family: "Dongle";
+    margin: 30px 0px;
+    line-height: 0.4;
+}
+.type-button-container{
+    width: 100%;
+    text-align: center;
+}
+.type-button{
+    padding: 0;
+    margin: 0px 10px;
+}
+.type-image{
+    width: 33%;
+    height: 100px;
+    width: 70px;
+    padding: 0;
+    margin: 0;
+}
