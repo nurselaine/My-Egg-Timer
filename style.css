@@ -30,14 +30,14 @@ body{
 }
 
 .title{
-    font-size: 36px;
+    font-size: 52px;
     line-height: 0.7;
     font-family: "Days One";
     margin: 0;
 }
 
 .info{
-    font-size: 14px;
+    font-size: 22px;
     line-height: 2;
     font-family: "Days One";
     margin: 0;
@@ -57,7 +57,7 @@ body{
     background-color: #fffbf8;
 }
 
-.start-button{
+.get-cooking-button{
     background-color: #e59267;
     border: none;
     border-radius: 5px;
@@ -99,6 +99,12 @@ em{
     border-radius: 5px;
 }
 
+.detail-button:hover {
+    background-color: #e59267;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+}
+
 .size-container{
     padding: 0px 10px;
 }
@@ -120,6 +126,12 @@ em{
     text-weight: bold;
 }
 
+.size-button:hover{
+    background-color: #e59267;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+}
+
 .type-container{
     padding: 0px 10px;
 }
@@ -137,6 +149,7 @@ em{
     padding: 0;
     margin: 0px 10px;
 }
+
 .type-image{
     width: 33%;
     height: 100px;
@@ -147,9 +160,60 @@ em{
 
 .timer-container{
     padding: 0px 10px;
+    background-color: #fff9f5;
 }
 
 .timer{
     font-size: 24px;
     font-family: "Dongle";
+}
+
+.estimateBoilTime{
+    background-color: #e59267;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 34px;
+    font-family: "Dongle";
+    padding: 0px 15px;
+}
+
+.estimateBoilTime:hover{
+    background-color: #fae5d8;
+    color: black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+}
+
+.estimateTime{
+    padding: 20px 0px 0px 0px;
+    margin: 0;
+}
+#estimateTime{
+    font-size: 80px;
+    font-family: "Dongle";
+    margin: 0;
+}
+
+.estimate-timer{
+    text-align: center;
+}
+
+.timer-button-container{
+    text-align: center;
+}
+
+.timer-button{
+    padding: 10px 25px;
+    background-color: transparent;
+    border: black 1px solid;
+    border-radius: 5px;
+    text-weight: bold;
+    margin: 15px;
+}
+
+.timer-button:hover{
+    background-color: #e59267;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
 }

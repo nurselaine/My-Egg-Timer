@@ -5,8 +5,8 @@
 // egg size: small = 5 sec medium = 10 sec large = 30 sec
 // egg type: Hard = 8 medium = 6 soft = 4
 
-let seconds = 00;
-let tens = 00;
+let minutes = 0;
+let seconds = 0;
 let fridgeTemperature = document.getElementById('fridge-temperature-button');
 let roomTemperature = document.getElementById('room-temperature-button');
 let sizeSmall = document.getElementById('small');
@@ -17,119 +17,130 @@ let typeMedium = document.getElementById('typeMedium');//6
 let typeHard = document.getElementById('typeHard');//8
 
 
-let domTens = document.getElementById('tens');
+let domMinutes = document.getElementById('minutes');
 let domSeconds = document.getElementById('seconds');
+let BoilTimeButton = document.getElementById('estimateBoilTimeButton');
 let startButton = document.getElementById('start-button');
 let stopButton = document.getElementById('stop-button');
 let resetButton = document.getElementById('reset-button');
 let Interval;
 let time = "";
 
+let eggTemperatureTime = 0; // keeps track of fridge/room tmep
+let eggBoilTypeTime = 0;
+let eggSizeTime = 0;
+let currentTimeInSeconds = 0;
+let displayTimeInMinutesSeconds;
+let interval;
 
 fridgeTemperature.onclick = function(){
-    console.log('add 60 seconds');
-    let fridgeTime = 60;
+    console.log('60 seconds')
+    eggTemperatureTime = 60;
 };
 
 roomTemperature.onclick = function (){
-    console.log('add 30 seconds');
-    let roomTime = 30;
+    console.log('30 seconds')
+    eggTemperatureTime = 30;
 };
 
 sizeSmall.onclick = function (){
-    console.log('add 30 seconds');
-    let smallTime = 30;
+    console.log('30 seconds')
+    eggSizeTime = 30;
 };
 
 sizeMedium.onclick = function (){
-    console.log('add 45 seconds');
-    let mediumTime = 45;
+    console.log('45 seconds')
+    eggSizeTime = 45;
 };
 
 sizeLarge.onclick = function (){
-    console.log('add 60 seconds');
-    let largeTime = 60;
+    console.log('60 seconds')
+    eggSizeTime = 60;
 };
 
 typeSoft.onclick = function(){
-    console.log('add 4 minutes');
-    let typeSoftTime = 4 * 60;
+    console.log(4*60 + ' seconds')
+    eggBoilTypeTime = 4 * 60;
 };
 
 typeMedium.onclick = function (){
-    console.log('add 6 minutes');
-    let typeMediumTime = 6 * 60;
+    console.log(6*60 + ' seconds')
+    eggBoilTypeTime = 6 * 60;
 };
 
 typeHard.onclick = function (){
-    console.log('add 8 minutes');
-    let typeHardTime = 8 * 60;
+    console.log(8*60 + ' seconds')
+    eggBoilTypeTime = 8 * 60;
 };
 
-let estimateTime = function estimateTime(){
-    if (fridgeTemperature && sizeSmall && typeSoft){
-        time = 60 + 30 + (4 *60);
-        document.getElementById('estimateTime').innerHTML = time;
-    }
+
+// write a function that comes up with a time
+const getCurrentTimeToDisplay = function(){
+
+   let currentTimeToDisplay = 0;
+   // add temperature to current time
+    currentTimeToDisplay += eggTemperatureTime;
+    currentTimeToDisplay += eggBoilTypeTime;
+    currentTimeToDisplay += eggSizeTime;
+    currentTimeInSeconds = currentTimeToDisplay;
+    console.log(currentTimeToDisplay);
+    // change seconds to minutes : seconds
+        // get minutes
+        minutes = Math.floor(currentTimeInSeconds / 60);
+        // get seconds
+        seconds = (currentTimeInSeconds % 60);
+        displayTimeInMinutesSeconds = minutes + " : " + seconds;
+        console.log(displayTimeInMinutesSeconds);
 }
 
-    //
-    // function getTime (){
-    //     // fridge variations
-    //     // size small
-    //     if (fridgeTemperature + sizeSmall + typeSoft){
-    //         time = fridgeTemperature + sizeSmall + typeSoft
-    //     } else if (fridgeTemperature + sizeSmall + typeMedium){
-    //         time = fridgeTemperature + sizeSmall + typeMedium
-    //     } else if (fridgeTemperature + sizeSmall + typeHard){
-    //         time = fridgeTemperature + sizeSmall + typeHard
-    //         // size medium
-    //     } else if (fridgeTemperature + sizeMedium + typeSoft){
-    //         time = fridgeTemperature + sizeMedium + typeSoft
-    //     } else if (fridgeTemperature + sizeMedium + typeMedium){
-    //         time = fridgeTemperature + sizeMedium + typeMedium
-    //     } else if (fridgeTemperature + sizeMedium + typeHard){
-    //         time = fridgeTemperature + sizeMedium + typeHard
-    //     }
-    //         // size large
-    //     else if (fridgeTemperature + sizeLarge + typeSoft){
-    //         time = fridgeTemperature + sizeLarge + typeSoft
-    //     } else if (fridgeTemperature + sizeLarge + typeMedium){
-    //         time = fridgeTemperature + sizeLarge + typeMedium
-    //     } else if (fridgeTemperature + sizeLarge + typeMedium){
-    //         time = fridgeTemperature + sizeLarge + typeMedium
-    //     }
-    // }
-    //
-    // document.getElementById('test').innerHTML = time;
 
+BoilTimeButton.onclick = function(){
+    getCurrentTimeToDisplay();
+    // print minute and seconds values into html
+    if(minutes < 10){
+        minutes = "0" + minutes;
+    }
+    domMinutes.innerHTML = minutes;
+    if (seconds == 0){
+        seconds = "00"
+    }
+    domSeconds.innerHTML = seconds;
+}
 
-// let temperature = "";
-// let size = "";
-// let eggType = "";
-// let time = "";
-//
-// const clickFridgeTemperature = function() {
-//     console.log("button click");
-//     temperature = 36;
-// }
-// const clickRoomTemperature = function() {
-//     console.log("button click");
-//     temperature = 60;
-// }
-//
-// const clickSizeSmall = function() {
-//     console.log("button click");
-//     size = "small";
-// }
-// const clickSizeMedium = function() {
-//     console.log("button click");
-//     size = "medium";
-// }
-// const clickSizeLarge = function() {
-//     console.log("button click");
-//     size = "large";
-// }
-//
+function countDownTimer(){
+    seconds--
 
+    if (seconds < 0){
+        seconds = 59;
+        domSeconds.innerHTML = seconds;
+        minutes--;
+    }
+    if(seconds < 10){
+        seconds = "0" + seconds;
+    }
+    if(seconds == 0){
+        domSeconds.innerHTML = "00";
+    }
 
+    domMinutes.innerHTML = minutes;
+
+    console.log(minutes + " : " + seconds);
+
+    domSeconds.innerHTML = seconds;
+}
+
+startButton.onclick = function(){
+    clearInterval(interval);
+    interval = setInterval(countDownTimer, 1000);
+}
+
+stopButton.onclick = function stopTImer(){
+    clearInterval(interval);
+}
+
+resetButton.onclick = function(){
+    // reset time to 00:00
+    domMinutes.innerHTML = "00";
+    domSeconds.innerHTML = "00";
+    clearInterval(interval);
+}

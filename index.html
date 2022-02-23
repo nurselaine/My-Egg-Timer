@@ -27,7 +27,7 @@
         </div>
 
         <div id="button-container">
-            <button class="start-button">Let's Get Cooking!</button>
+            <button class="get-cooking-button">Let's Get Cooking!</button>
         </div>
 
     </div>
@@ -65,6 +65,7 @@
                 Egg <em>boiled type</em>
             </p>
             <div class="type-button-container">
+                <!--I want to change the img of these buttons-->
                 <button id="typeSoft" class="type-button">  <img class="type-image" src="./soft-boil.png"></button>
                 <button id="typeMedium" class="type-button">  <img class="type-image" src="./medium-boil.png"></button>
                 <button id="typeHard" class="type-button">  <img class="type-image" src="./hard-boil.png"></button>
@@ -75,28 +76,22 @@
     </div>
     <div class="timer-container">
         <div class="timer">
-            <p>
+            <p class="estimateTime">
                 Estimated <em>boiled time</em>
+                <button id="estimateBoilTimeButton" class="estimateBoilTime estimate-button"> > </button>
             </p>
-            <p id="estimateTime">
-                <span id="seconds">00</span>:<span id="tens">00</span>
+            <p id="estimateTime" class="estimate-timer">
+                <span id="minutes">00</span>:<span id="seconds">00</span>
             </p>
 
 
         </div>
-        <div class="timer-button">
-            <button id="start-button">Start</button>
-            <button id="stop-button">Stop</button>
-            <button id="reset-button">Reset</button>
+        <div class="timer-button-container">
+            <button class="timer-button" id="start-button">Start</button>
+            <button  class="timer-button" id="stop-button">Stop</button>
+            <button  class="timer-button" id="reset-button">Reset</button>
         </div>
     </div>
-
-    <div>
-        <p id="test">
-        </p>
-    </div>
-
-
 
 </div>
 <script src="index.js"></script>
